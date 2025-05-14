@@ -14,12 +14,14 @@ const Todo = ({ todos, setTodos, input, setInput }) => {
       <p>To-Do List</p>
       <input value={input} onChange={(e) => setInput(e.target.value)} />
       <button onClick={handleAddTodo}>Add Todo</button>
-      {todos.map((todo) => (
-        <div>
-          {todo}
-          <button onClick={() => handleDeleteTodo(todo)}>Delete</button>
-        </div>
-      ))}
+      <ul>
+        {todos.map((todo) => (
+          <li>
+            {todo}
+            <button onClick={() => handleDeleteTodo(todo)}>Delete</button>
+          </li>
+        ))}
+      </ul>
     </>
   );
 };
